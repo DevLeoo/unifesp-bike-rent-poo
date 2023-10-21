@@ -1,0 +1,38 @@
+
+### CREATE USER
+POST /api/bikes/register HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+
+{
+    "name": "Leonardo",
+	"email": "leonardo@uol.com",
+    "password": "supersafe"
+}
+
+
+### FIND ONE USER
+get /api/bikes/find?id=leonardo@uol.com HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+
+
+
+### FIND ALL USERS
+GET /api/bikes/ HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+
+### DELETE ALL USER
+DELETE /api/bikes/remove?id=leonardo@uol.com HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+
