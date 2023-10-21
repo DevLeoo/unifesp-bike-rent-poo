@@ -29,7 +29,7 @@ Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
 Host: localhost:3000
 Content-Length: 2488
 
-### DELETE ALL USER
+### DELETE USER
 DELETE /api/users/remove?email=leonardo@uol.com HTTP/1.1
 Content-Type: application/json
 Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00

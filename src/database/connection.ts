@@ -1,11 +1,10 @@
 import * as dotenv from "dotenv";
-import * as path from "path";
 import { DataSource } from "typeorm";
 import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
 import { CreateUsersTable1697916588346 } from "./migrations/1697916588346-CreateUsersTable";
 import User from "../Modules/Users/entities/user-entity";
 import { CreateBikesTable1697922194541 } from "./migrations/1697922194541-CreateBikesTable";
-
+import Bike from "../Modules/Bikes/entities/bike-entity";
 dotenv.config();
 
 export const dbConfig: PostgresConnectionOptions = {
@@ -15,7 +14,7 @@ export const dbConfig: PostgresConnectionOptions = {
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  entities: [User],
+  entities: [User, Bike],
   migrations: [CreateUsersTable1697916588346, CreateBikesTable1697922194541],
   synchronize: true,
 };

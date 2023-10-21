@@ -1,5 +1,5 @@
-
-### CREATE USER
+@id = dde9ca19-6279-4896-b03c-9040823f16a3
+### CREATE BIKE
 POST /api/bikes/register HTTP/1.1
 Content-Type: application/json
 Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
@@ -7,14 +7,22 @@ Host: localhost:3000
 Content-Length: 2488
 
 {
-    "name": "Leonardo",
-	"email": "leonardo@uol.com",
-    "password": "supersafe"
+  "name": "bike",
+  "type": "montanha",
+  "bodySize": 1,
+  "maxLoad": 1,
+  "rate": 1,
+  "description": "description",
+  "ratings": 1,
+  "imageUrls": "125bcb53-fe26-4cbc-a8cc-70d645d66ea9",
+  "available": false,
+  "lat": 1,
+  "long": 1
 }
 
 
-### FIND ONE USER
-get /api/bikes/find?id=leonardo@uol.com HTTP/1.1
+### FIND ONE BIKE
+get /api/bikes/find?id={{id}} HTTP/1.1
 Content-Type: application/json
 Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
 Host: localhost:3000
@@ -22,15 +30,15 @@ Content-Length: 2488
 
 
 
-### FIND ALL USERS
+### FIND ALL BIKES
 GET /api/bikes/ HTTP/1.1
 Content-Type: application/json
 Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
 Host: localhost:3000
 Content-Length: 2488
 
-### DELETE ALL USER
-DELETE /api/bikes/remove?id=leonardo@uol.com HTTP/1.1
+### DELETE BIKE
+DELETE /api/bikes/remove?id={{id}} HTTP/1.1
 Content-Type: application/json
 Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
 Host: localhost:3000
