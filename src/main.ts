@@ -6,7 +6,6 @@ import routes from "./routes";
 
 class App {
   public app: express.Application;
-  public static resource = "DFESERVICE";
 
   constructor() {
     this.app = express();

@@ -2,7 +2,7 @@ import { Request, Response, Router } from "express";
 
 import bikes from "./bikes";
 import rents from "./rents";
-import users from "./users";
+import users from "../Modules/Users/routes/router";
 import images from "./images";
 
 const routes = Router();
