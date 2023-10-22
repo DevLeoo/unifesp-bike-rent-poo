@@ -5,6 +5,7 @@ import { CreateUsersTable1697916588346 } from "./migrations/1697916588346-Create
 import User from "../Modules/Users/entities/user-entity";
 import { CreateBikesTable1697922194541 } from "./migrations/1697922194541-CreateBikesTable";
 import Bike from "../Modules/Bikes/entities/bike-entity";
+import Images from "../Modules/Images/entities/image-entity";
 dotenv.config();
 
 export const dbConfig: PostgresConnectionOptions = {
@@ -14,7 +15,7 @@ export const dbConfig: PostgresConnectionOptions = {
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  entities: [User, Bike],
+  entities: [User, Bike, Images],
   migrations: [CreateUsersTable1697916588346, CreateBikesTable1697922194541],
   synchronize: true,
 };

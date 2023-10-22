@@ -1,0 +1,35 @@
+@id = 720343b3-107b-4093-8ad3-ab6720779408
+### CREATE IMAGE
+POST /api/images/register HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+
+{
+   "url": "http://teste.com/bike"
+}
+
+
+### FIND ONE IMAGE
+get /api/images/find?id={{id}} HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+
+
+### FIND ALL IMAGE
+GET /api/images/ HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+
+### DELETE IMAGE
+DELETE /api/images/remove?id={{id}} HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+
