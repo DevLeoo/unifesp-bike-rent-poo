@@ -1,3 +1,5 @@
+import { IImage } from "../../Images/interfaces";
+
 export interface IBike {
   name: string;
   type: string;
@@ -6,9 +8,9 @@ export interface IBike {
   rate: number;
   description: string;
   ratings: number;
-  imageUrls: string;
+  imageUrls: IImage[];
   available: boolean;
   lat: number;
   long: number;
-  id?: string;
+  id: string;
 }

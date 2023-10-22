@@ -8,10 +8,8 @@ const getUsers = async (): Promise<IUser[]> => {
   return await userRepository.find();
 };
 
-const registerUser = async (user: IUser): Promise<string> => {
-  const saved = await userRepository.save(user);
-  console.log(saved);
-  return saved as any;
+const registerUser = async (user: IUser): Promise<IUser> => {
+  return await userRepository.save(user);
 };
 
 const find = async (email: string): Promise<IUser> => {

@@ -57,7 +57,7 @@ export class CreateBikesTable1697922194541 implements MigrationInterface {
             isNullable: false,
           },
           {
-            name: "imageUrlsId",
+            name: "imageUrls",
             type: "uuid",
             isNullable: false,
           },
@@ -94,24 +94,36 @@ export class CreateBikesTable1697922194541 implements MigrationInterface {
             name: "url",
             type: "varchar",
           },
+          {
+            name: "bikeId",
+            type: "varchar",
+          },
         ],
       }),
       true
     );
 
     await queryRunner.createForeignKey(
-      "bikes",
+      "imageUrls",
       new TableForeignKey({
-        columnNames: ["imageUrlsId"],
+        columnNames: ["bikeId"],
         referencedColumnNames: ["id"],
-        referencedTableName: "imageUrls",
+        referencedTableName: "bikes",
         onDelete: "CASCADE",
       })
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey("bikes", "FK_bikes_imageUrls");
+    const imageUrlsTable = await queryRunner.getTable("imageUrls");
+    if (imageUrlsTable) {
+      const foreignKey = imageUrlsTable.foreignKeys.find(
+        (fk) => fk.columnNames.indexOf("bikeId") !== -1
+      );
+      if (foreignKey) {
+        await queryRunner.dropForeignKey("imageUrls", foreignKey);
+      }
+    }
 
     await queryRunner.dropTable("bikes");
 

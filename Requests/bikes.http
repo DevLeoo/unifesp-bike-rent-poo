@@ -14,7 +14,7 @@ Content-Length: 2488
   "rate": 1,
   "description": "description",
   "ratings": 1,
-  "imageUrls": "125bcb53-fe26-4cbc-a8cc-70d645d66ea9",
+  "imageUrls": ["http://teste.com/imagem"],
   "available": false,
   "lat": 1,
   "long": 1

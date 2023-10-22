@@ -8,10 +8,8 @@ const getImages = async (): Promise<IImage[]> => {
   return await imageRepository.find();
 };
 
-const registerImage = async (image: IImage): Promise<string> => {
-  const saved = await imageRepository.save(image);
-  console.log(saved);
-  return saved as any;
+const registerImage = async (image: IImage): Promise<IImage> => {
+  return await imageRepository.save(image);
 };
 
 const find = async (id: string): Promise<IImage> => {

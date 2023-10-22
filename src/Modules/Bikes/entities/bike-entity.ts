@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import Images from "../../Images/entities/image-entity";
 
 @Entity("bikes")
 export class Bikes {
@@ -26,8 +27,8 @@ export class Bikes {
   @Column()
   ratings: number;
 
-  @Column()
-  imageUrls: string;
+  @OneToMany(() => Images, (image) => image.bikeId)
+  imageUrls: Images[];
 
   @Column()
   available: boolean;
