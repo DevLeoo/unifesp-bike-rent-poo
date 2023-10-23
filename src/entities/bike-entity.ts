@@ -2,7 +2,7 @@ import { Column, Entity, PrimaryColumn } from "typeorm";
 import { BaseEntity } from "./base-entity";
 
 @Entity("bikes")
-export class Bikes extends BaseEntity {
+export class Bikes {
   @PrimaryColumn({ type: "uuid" })
   id: string;
 
