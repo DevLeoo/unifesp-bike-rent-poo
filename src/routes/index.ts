@@ -1,7 +1,7 @@
 import { Request, Response, Router } from "express";
 
 import bikes from "../Modules/Bikes/routes/router";
-import rents from "./rents";
+import rents from "../Modules/Rents/routes/router";
 import users from "../Modules/Users/routes/router";
 import images from "../Modules/Images/routes/router";
 

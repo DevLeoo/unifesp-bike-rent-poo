@@ -6,6 +6,8 @@ import User from "../Modules/Users/entities/user-entity";
 import { CreateBikesTable1697922194541 } from "./migrations/1697922194541-CreateBikesTable";
 import Bike from "../Modules/Bikes/entities/bike-entity";
 import Images from "../Modules/Images/entities/image-entity";
+import Rent from "../Modules/Rents/entities/rent-entity";
+import { CreateRentsTable1698023402737 } from "./migrations/1698023402737-CreateRentssTable";
 dotenv.config();
 
 export const dbConfig: PostgresConnectionOptions = {
@@ -15,12 +17,16 @@ export const dbConfig: PostgresConnectionOptions = {
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  entities: [User, Bike, Images],
-  migrations: [CreateUsersTable1697916588346, CreateBikesTable1697922194541],
+  entities: [User, Bike, Images, Rent],
+  migrations: [
+    CreateUsersTable1697916588346,
+    CreateBikesTable1697922194541,
+    CreateRentsTable1698023402737,
+  ],
   synchronize: true,
 };
 
 export const AppDataSource = new DataSource(dbConfig);
 
-//npm run typeorm migration:create src/database/migrations/CreateUsersTable
+// npm run typeorm migration:create src/database/migrations/CreateUsersTable
 // npm run typeorm -- -d src/database/connection.ts migration:run

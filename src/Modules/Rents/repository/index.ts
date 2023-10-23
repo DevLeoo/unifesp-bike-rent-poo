@@ -8,10 +8,8 @@ const getRents = async (): Promise<IRent[]> => {
   return await rentRepository.find();
 };
 
-const registerRent = async (rent: IRent): Promise<string> => {
-  const saved = await rentRepository.save(rent);
-  console.log(saved);
-  return saved as any;
+const registerRent = async (rent: IRent): Promise<IRent> => {
+  return await rentRepository.save(rent);
 };
 
 const find = async (id: string): Promise<IRent> => {

@@ -1,0 +1,40 @@
+@id = dd2dd781-990c-42d2-85ee-e5fe62a7f39b
+
+### CREATE RENT
+POST /api/rents/register HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+
+{
+  "bike": "9418cf94-1ecd-42c5-80cc-6ccccefa777c",
+  "user": "eccd767c-2c37-45a6-ae13-d6223209607f",
+  "start": "2023-10-23T01:15:14.506Z"
+
+}
+
+
+### FIND ONE RENT
+get /api/rents/find?id={{id}} HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+
+
+
+### FIND ALL RENTS
+GET /api/rents/ HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+
+### DELETE RENT
+DELETE /api/rents/remove?id={{id}} HTTP/1.1
+Content-Type: application/json
+Tenantid: 7d8a92a1-4979-4b6d-863b-c8a4cfda2c00
+Host: localhost:3000
+Content-Length: 2488
+

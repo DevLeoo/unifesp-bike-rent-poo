@@ -13,9 +13,6 @@ export class Rent {
 
   @Column()
   start: Date;
-
-  @Column()
-  end: Date;
 }
 
 export default Rent;
