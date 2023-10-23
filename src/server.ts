@@ -6,7 +6,7 @@ dotenv.config();
 const PORT = process.env.PORT || 3000;
 
 AppDataSource.initialize().then(async () => {
-  console.log("Database OK");
+  console.log("📦 Database Connected 🔥");
   app.listen(PORT, () => {
     console.log(`Bike Rent Service running on port ${PORT}`);
     console.log(`The environment is on ${process.env.ENV}`);
