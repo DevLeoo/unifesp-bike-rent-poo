@@ -9,10 +9,11 @@ AppDataSource.initialize().then(async () => {
   console.log("📦 Database Connected 🔥");
   app.listen(PORT, () => {
     console.log(`Bike Rent Service running on port ${PORT}`);
-    console.log(`The environment is on ${process.env.ENV}`);
+    console.log(`The environment is ${process.env.ENV}`);
   });
 });
 
 process.on("unhandledRejection", (reason, promise) => {
   console.log(`${new Date().toISOString()}: Unhandled Rejection at: ${reason}`);
+  throw reason;
 });
