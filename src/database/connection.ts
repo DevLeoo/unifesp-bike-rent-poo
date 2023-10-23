@@ -29,4 +29,3 @@ export const dbConfig: PostgresConnectionOptions = {
 export const AppDataSource = new DataSource(dbConfig);
 
 // npm run typeorm migration:create src/database/migrations/CreateUsersTable
-// npm run typeorm -- -d src/database/connection.ts migration:run
