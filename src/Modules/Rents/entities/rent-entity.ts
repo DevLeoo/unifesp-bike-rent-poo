@@ -13,6 +13,9 @@ export class Rent {
 
   @Column()
   start: Date;
+
+  @Column({ nullable: true })
+  end: Date;
 }
 
 export default Rent;

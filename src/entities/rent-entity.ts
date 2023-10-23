@@ -7,10 +7,10 @@ export class Rent extends BaseEntity {
   id: string;
 
   @Column()
-  bike: string; // relacionamento 1 to 1
+  bike: string;
 
   @Column()
-  user: string; // relacionamento 1 to 1
+  user: string;
 
   @Column()
   start: Date;

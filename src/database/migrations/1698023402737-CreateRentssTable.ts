@@ -30,6 +30,12 @@ export class CreateRentsTable1698023402737 implements MigrationInterface {
             length: "100",
             isNullable: false,
           },
+          {
+            name: "end",
+            type: "varchar",
+            length: "100",
+            isNullable: true,
+          },
         ],
       })
     );
