@@ -16,3 +16,25 @@ model User {
   email    String @unique
   password String
 }
+
+model Image {
+  id      String @id @default(uuid())
+  bike_id String
+  url     String
+  bike    Bike   @relation(fields: [bike_id], references: [id])
+}
+
+model Bike {
+  id          String  @id @default(uuid())
+  name        String
+  type        String
+  bodySize    Int
+  maxLoad     Int
+  rate        Int
+  description String
+  images      Image[]
+  ratings     Int
+  available   Boolean
+  lat         Int
+  long        Int
+}
