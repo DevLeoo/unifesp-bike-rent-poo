@@ -6,6 +6,7 @@ import { PrismaUserRepo } from "./external/database/prisma-user-repo";
 import { PrismaBikeRepo } from "./external/database/prisma-bike-repo";
 import { PrismaRentRepo } from "./external/database/prisma-rent-repo";
 import { DuplicateUserError } from "./errors/duplicate-user-error";
+import { DuplicateBikeError } from "./errors/duplicate-bike-error";
 
 const cors = (req: Request, res: Response, next: NextFunction): void => {
   res.set("access-control-allow-origin", "*");
@@ -52,9 +53,9 @@ server.post("/api/bikes", async (req, res) => {
     const id = await app.registerBike(req.body);
     res.status(201).json({ id });
   } catch (e) {
-    if (e instanceof DuplicateUserError) {
+    if (e instanceof DuplicateBikeError) {
       res.status(400).json({
-        message: "Could not register user.",
+        message: "Could not register bike.",
       });
       return;
     }
